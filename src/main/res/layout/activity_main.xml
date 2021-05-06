@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#40033F47"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <include
+        layout="@layout/toolbar"/>
+
+    <ProgressBar
+        android:id="@+id/indeterminateBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+
+    <RelativeLayout
+        android:id="@+id/childRelativeLayout"
+        android:layout_below="@+id/toolBar"
+        android:padding="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:id="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="3"
+            android:visibility="gone"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_dataInput"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:textSize="25sp"
+                android:textColorHint="#65064663"
+                android:textColor="@color/color_primary"
+                android:layout_weight="2"
+                android:hint="@string/hint"/>
+
+            <Button
+                android:id="@+id/btnSearchWeather"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="@string/search"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"/>
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/cityName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/color_primary"
+            android:layout_marginLeft="10dp"
+            android:textSize="30sp"
+            android:layout_below="@+id/layout"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/lv_weatherReports"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/cityName"/>
+
+
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
